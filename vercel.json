@@ -7,78 +7,28 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
       ]
     }
   ],
   "redirects": [
-    {
-      "source": "/services",
-      "destination": "/#services",
-      "permanent": true
-    },
-    {
-      "source": "/contact-us",
-      "destination": "/quote/",
-      "permanent": true
-    },
-    {
-      "source": "/post/lawn-mowing-services-in-guelph-ontario",
-      "destination": "/lawn-mowing-guelph/",
-      "permanent": true
-    },
-    {
-      "source": "/post/mulching-services-in-guelph-ontario",
-      "destination": "/mulching-guelph/",
-      "permanent": true
-    },
-    {
-      "source": "/post/sidewalk-garden-edging-guelph-ontario",
-      "destination": "/trimming-edging-guelph/",
-      "permanent": true
-    },
-    {
-      "source": "/post/garden-installation-landscaping-guelph-ontario",
-      "destination": "/mulching-guelph/",
-      "permanent": true
-    },
-    {
-      "source": "/post/:path*",
-      "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/profile/:path*",
-      "destination": "/about/",
-      "permanent": true
-    }
+    { "source": "/services{/}?", "destination": "/#services", "permanent": true },
+    { "source": "/contact-us{/}?", "destination": "/quote/", "permanent": true },
+    { "source": "/post/lawn-mowing-services-in-guelph-ontario{/}?", "destination": "/lawn-mowing-guelph/", "permanent": true },
+    { "source": "/post/mulching-services-in-guelph-ontario{/}?", "destination": "/mulching-guelph/", "permanent": true },
+    { "source": "/post/sidewalk-garden-edging-guelph-ontario{/}?", "destination": "/trimming-edging-guelph/", "permanent": true },
+    { "source": "/post/garden-installation-landscaping-guelph-ontario{/}?", "destination": "/mulching-guelph/", "permanent": true },
+    { "source": "/post/:path(.*)", "destination": "/blog/", "permanent": true },
+    { "source": "/profile/:path(.*)", "destination": "/about/", "permanent": true }
   ]
 }
