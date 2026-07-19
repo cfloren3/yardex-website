@@ -664,3 +664,16 @@ html{scrollbar-color:var(--gold-500) var(--green-950)}
 .step-card .btn{margin-top:auto;align-self:flex-start}
 .carousel--steps > *{flex:0 0 min(400px,88%)}
 @media(max-width:1200px){.nav{gap:1.1rem}}
+
+/* Floating contact button */
+.fab-contact{
+  position:fixed;right:18px;bottom:18px;z-index:70;
+  display:inline-block;padding:.85rem 1.5rem;border-radius:999px;
+  background:var(--gold-500,#c9a14e);color:var(--green-950,#122117);
+  font-weight:700;text-decoration:none;letter-spacing:.01em;
+  box-shadow:0 6px 20px rgba(0,0,0,.28);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.fab-contact:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.34)}
+@media(max-width:760px){.fab-contact{bottom:calc(76px + env(safe-area-inset-bottom));right:14px;padding:.75rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){.fab-contact{transition:none}.fab-contact:hover{transform:none}}

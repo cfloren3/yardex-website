@@ -65,13 +65,23 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div>
-          <label for="q-name">Name</label>
-          <input id="q-name" name="name" type="text" autocomplete="name" required>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem">
+          <div>
+            <label for="q-fname">First name</label>
+            <input id="q-fname" name="first_name" type="text" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="q-lname">Last name</label>
+            <input id="q-lname" name="last_name" type="text" autocomplete="family-name" required>
+          </div>
         </div>
         <div>
-          <label for="q-contact">Phone or email</label>
-          <input id="q-contact" name="contact" type="text" autocomplete="tel" required>
+          <label for="q-email">Email</label>
+          <input id="q-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+        <div>
+          <label for="q-phone">Phone</label>
+          <input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
         </div>
         <div>
           <label for="q-address">Address or neighbourhood</label>
@@ -155,7 +165,7 @@
           <li><a href="https://www.google.com/maps?q=Yardex+Guelph" rel="noopener">Find us on Google</a></li>
         </ul>
         <div class="footer-badges" style="margin-top:1rem">
-          <span><b>★★★★★</b> <a href="https://www.google.com/maps?q=Yardex+Guelph" rel="noopener">53 five-star Google reviews</a></span>
+          <span><b>★★★★★</b> <a href="https://www.google.com/maps?q=Yardex+Guelph" rel="noopener">55 five-star Google reviews</a></span>
           <span><b>2024</b> Quality Business Award</span>
           <span>As featured in <a href="https://www.guelphtoday.com/local-news/fourteen-year-old-launches-local-landscaping-company-6451456" rel="noopener">GuelphToday</a></span>
           <span>BBB registered business profile</span>
