@@ -677,3 +677,8 @@ html{scrollbar-color:var(--gold-500) var(--green-950)}
 .fab-contact:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.34)}
 @media(max-width:760px){.fab-contact{bottom:calc(76px + env(safe-area-inset-bottom));right:14px;padding:.75rem 1.25rem}}
 @media(prefers-reduced-motion:reduce){.fab-contact{transition:none}.fab-contact:hover{transform:none}}
+
+/* Hero review proof badge */
+.hero-proof{margin-top:1.1rem;font-size:.95rem}
+.hero-proof a{color:var(--cream-50);text-decoration:none;opacity:.92;letter-spacing:.02em}
+.hero-proof a:hover{opacity:1;text-decoration:underline;text-underline-offset:3px}
