@@ -116,3 +116,29 @@
     stats.forEach(animate);
   }
 })();
+
+// Live review count: replaces the static number when the API is configured.
+// Fails silently — static count remains if anything is unavailable.
+(function () {
+  fetch("/api/reviews")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.count || d.count < 55) return; // sanity guard
+      var n = String(d.count);
+      // animated stat counter target
+      document.querySelectorAll("[data-count]").forEach(function (el) {
+        if (el.getAttribute("data-count") === "75") el.setAttribute("data-count", n);
+        if (/^\d+$/.test(el.textContent.trim()) && el.textContent.trim() !== "0" && el.getAttribute("data-count") === n) el.textContent = n;
+      });
+      // visible text occurrences
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      var nodes = [];
+      while (walker.nextNode()) {
+        if (/\b75\+?(?=[^0-9]{0,20}(five|star|review))/i.test(walker.currentNode.nodeValue) || /All 75\+? reviews/.test(walker.currentNode.nodeValue)) nodes.push(walker.currentNode);
+      }
+      nodes.forEach(function (t) {
+        t.nodeValue = t.nodeValue.replace(/\b75\+?/g, n);
+      });
+    })
+    .catch(function () {});
+})();
