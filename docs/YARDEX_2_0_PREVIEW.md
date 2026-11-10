@@ -69,3 +69,9 @@ enhancement layer adds motion, depth and cleaner presentation.
 
 ## To publish (only after approval)
 Merge `redesign/yardex-2-0` into `main`. Rollback = revert that merge.
+
+## Maintenance note
+`vercel.json` caches everything under `/assets/` for one year (`immutable`). Never edit
+`enhance.css` / `enhance.js` in place after launch — save changes under a new name
+(e.g. `/assets/v2.1/enhance.css`) and update the references, or returning visitors will
+keep the old version.
