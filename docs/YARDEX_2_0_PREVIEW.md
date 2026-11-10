@@ -9,8 +9,8 @@ enhancement layer adds motion, depth and cleaner presentation.
 ### Files
 | File | Change |
 |---|---|
-| `dist/assets/v2/enhance.css` | **new** — enhancement styles (4.5 KB gzipped) |
-| `dist/assets/v2/enhance.js` | **new** — enhancement behaviour (3.4 KB gzipped, no libraries) |
+| `dist/assets/v2/enhance-r2.css` | **new** — enhancement styles (4.5 KB gzipped) |
+| `dist/assets/v2/enhance-r2.js` | **new** — enhancement behaviour (3.4 KB gzipped, no libraries) |
 | all 32 `dist/**/*.html` | `<head>`: one `<noscript>` stylesheet link; end of `<body>`: one deferred script tag |
 | `dist/index.html` | targeted section additions (below) — **hero markup byte-identical** |
 | `dist/about/`, `dist/services/`, `dist/reviews/` | additive credential / recognition blocks |
@@ -72,8 +72,8 @@ Merge `redesign/yardex-2-0` into `main`. Rollback = revert that merge.
 
 ## Maintenance note
 `vercel.json` caches everything under `/assets/` for one year (`immutable`). Never edit
-`enhance.css` / `enhance.js` in place after launch — save changes under a new name
-(e.g. `/assets/v2.1/enhance.css`) and update the references, or returning visitors will
+`enhance-r2.css` / `enhance-r2.js` in place after launch — save changes under a new name
+(e.g. `enhance-r3.css`) and update the references, or returning visitors will
 keep the old version.
 
 ## Round 2 changes (owner feedback)

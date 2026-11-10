@@ -20,9 +20,9 @@
 
   /* 0. Load the enhancement stylesheet now (kept off the critical path so the
         original page paints first; a <noscript> fallback exists in the HTML). */
-  if (!document.querySelector('link[href="/assets/v2/enhance.css"]')) {
+  if (!document.querySelector('link[href="/assets/v2/enhance-r2.css"]')) {
     var css = document.createElement("link");
-    css.rel = "stylesheet"; css.href = "/assets/v2/enhance.css";
+    css.rel = "stylesheet"; css.href = "/assets/v2/enhance-r2.css";
     document.head.appendChild(css);
   }
 
