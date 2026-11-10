@@ -56,7 +56,7 @@
   }
 
   /* 3. Stagger sibling reveals inside grids (the original main.js adds .in) */
-  $$(".svc-grid, .award-row, .grid-3, .grid-4, .stats .container, .creds, .badge-wall, .blog-list, .carousel").forEach(function (grid) {
+  $$(".svc-grid, .award-row, .grid-3, .grid-4, .stats .container, .creds, .badge-wall, .blog-list, .carousel, .ba-grid, .photo-trio, .motion-grid").forEach(function (grid) {
     $$(":scope > .reveal", grid).forEach(function (el, i) {
       if (!el.style.transitionDelay) el.style.transitionDelay = (Math.min(i, 6) * 0.08) + "s";
     });
@@ -106,7 +106,7 @@
   onEnter($$("[data-countup]"), countUp, { threshold: 0.6 });
 
   /* 7. Subtle parallax for existing photo-backed sections (desktop only) */
-  var px = $$(".identity, .section--photo-light, .hero--sub");
+  var px = $$(".identity, .section--photo-light, .hero--sub, .photo-band");
   if (px.length && !reduce && wide) {
     var pTick = false;
     var update = function () {
@@ -125,7 +125,7 @@
 
   /* 8. Gentle 3D tilt on cards (mouse/trackpad only) */
   if (finePointer && !reduce) {
-    $$(".svc, .award-card, .mark").forEach(function (card) {
+    $$(".award-card, .mark").forEach(function (card) {
       card.classList.add("tilt");
       card.addEventListener("pointermove", function (e) {
         var r = card.getBoundingClientRect();
@@ -155,7 +155,7 @@
   }
 
   /* 10. Lightbox for the photo gallery (images only; nothing navigates away) */
-  var gal = $$(".gallery-track img");
+  var gal = $$(".gallery-track img, .zoomable img");
   if (gal.length && typeof HTMLDialogElement === "function") {
     var seen = {}, list = gal.filter(function (im) { if (seen[im.src]) return false; seen[im.src] = 1; return true; });
     var dlg = document.createElement("dialog");
@@ -180,4 +180,47 @@
   /* 11. Keep the mobile menu and header in sync */
   var toggle = document.querySelector(".nav-toggle"), nav = document.getElementById("site-nav");
   if (toggle && nav) toggle.addEventListener("click", function () { document.body.classList.toggle("nav-open", nav.classList.contains("open")); });
+  /* 11b. Deferred media: band backgrounds and video posters load only when near the viewport */
+  var lazyMedia = $$("[data-bg], video[data-poster]");
+  var loadMedia = function (el) {
+    if (el.hasAttribute("data-bg")) el.style.setProperty("--pb-img", "url('" + el.getAttribute("data-bg") + "')");
+    if (el.hasAttribute("data-poster")) el.setAttribute("poster", el.getAttribute("data-poster"));
+  };
+  if (hasIO) {
+    var mio = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { loadMedia(e.target); mio.unobserve(e.target); } });
+    }, { rootMargin: "600px 0px" });
+    lazyMedia.forEach(function (el) { mio.observe(el); });
+  } else { lazyMedia.forEach(loadMedia); }
+
+  /* 12. Short lawn clips: play only while on screen; never autoplay for reduced motion */
+  $$("video[data-autoplay]").forEach(function (v) {
+    v.muted = true;
+    if (reduce || !hasIO) { v.setAttribute("controls", ""); return; }
+    new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 }).observe(v);
+  });
+
+  /* 13. Contact button: always one tap from the quote form; steps aside when the form is visible */
+  var fab = document.querySelector(".fab-contact");
+  var qform = document.getElementById("quote-form");
+  if (fab) {
+    var formVisible = false, phone = window.matchMedia("(max-width: 760px)");
+    var syncFab = function () {
+      /* on phones the button waits until the visitor scrolls past the opening screen,
+         so it never covers the hero text; on desktop it is always available */
+      var early = phone.matches && window.scrollY < window.innerHeight * 0.6;
+      fab.classList.toggle("fab-hidden", formVisible || early);
+    };
+    if (qform && hasIO) {
+      new IntersectionObserver(function (en) { formVisible = en[0].isIntersecting; syncFab(); }, { threshold: 0.05 }).observe(qform);
+    }
+    window.addEventListener("scroll", syncFab, { passive: true });
+    window.addEventListener("resize", syncFab);
+    syncFab();
+  }
 })();

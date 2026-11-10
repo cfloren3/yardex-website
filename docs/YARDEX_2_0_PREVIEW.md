@@ -75,3 +75,34 @@ Merge `redesign/yardex-2-0` into `main`. Rollback = revert that merge.
 `enhance.css` / `enhance.js` in place after launch — save changes under a new name
 (e.g. `/assets/v2.1/enhance.css`) and update the references, or returning visitors will
 keep the old version.
+
+## Round 2 changes (owner feedback)
+- **More photography:** 10 new owner-supplied lawn photos (`/assets/img2/`) added to the homepage
+  gallery strip (mixed with the originals), Reviews gallery, About, Services and Lawn Mowing pages.
+- **Before & after:** new homepage section with the three genuine before/after cleanup photos
+  (deck vines, garden bed, rock garden); tap any photo to view it full-size.
+- **Lawns in motion:** two short silent clips of fresh mowing stripes (≈460 KB each, H.264). They
+  download only when scrolled near, play only while on screen, pause off-screen, and never
+  autoplay for reduced-motion users (controls are shown instead). Also on the Lawn Mowing page.
+- **Photo band:** full-bleed parallax photo with the line "You can tell which yards on the street
+  are ours." (from the About page); image loads only when scrolled near.
+- **Texture:** fine film grain + soft diagonal mowing-stripe bands on the green sections.
+- **Services:** no longer boxed cards — a flowing, staggered two-column photo layout with numbered
+  services (same names, descriptions, links; also applies to /services/).
+- **Contact button:** bottom-right on every page, goes straight to the quote form
+  (`/quote/#quote-form`); hidden while the form is on screen; on phones it appears after the
+  first scroll so it never covers the hero text.
+- **Removed:** the homepage "Proudly serving all of Guelph" neighbourhood section (owner request).
+
+### SEO impact of round 2 (verified against origin/main)
+- Titles, meta descriptions, canonicals, robots, structured data, H1s, URLs, internal links,
+  sitemap: unchanged.
+- Homepage: H2 "Proudly serving all of Guelph" and its paragraph removed (requested); H2
+  "Real cleanups, start to finish" added.
+- ⚠️ The removed section was the only on-page mention of the 13 Guelph neighbourhoods. They remain
+  in the homepage `LocalBusiness` structured data (`areaServed`), which is unchanged. If local
+  neighbourhood searches dip, consider restoring a one-line mention (e.g. in the footer).
+
+### Performance (homepage, emulated phone, throttled, local uncompressed server)
+- Production: LCP ≈ 0.95 s, CLS 0.078, initial transfer ≈ 2.5 MB
+- Preview:    LCP ≈ 1.0–1.1 s, CLS 0.078, initial transfer ≈ 2.35 MB (lower — new media is deferred)
