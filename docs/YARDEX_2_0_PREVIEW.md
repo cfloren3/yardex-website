@@ -9,8 +9,8 @@ enhancement layer adds motion, depth and cleaner presentation.
 ### Files
 | File | Change |
 |---|---|
-| `dist/assets/v2/enhance-r2.css` | **new** — enhancement styles (4.5 KB gzipped) |
-| `dist/assets/v2/enhance-r2.js` | **new** — enhancement behaviour (3.4 KB gzipped, no libraries) |
+| `dist/assets/v2/enhance-r3.css` | **new** — enhancement styles (4.5 KB gzipped) |
+| `dist/assets/v2/enhance-r3.js` | **new** — enhancement behaviour (3.4 KB gzipped, no libraries) |
 | all 32 `dist/**/*.html` | `<head>`: one `<noscript>` stylesheet link; end of `<body>`: one deferred script tag |
 | `dist/index.html` | targeted section additions (below) — **hero markup byte-identical** |
 | `dist/about/`, `dist/services/`, `dist/reviews/` | additive credential / recognition blocks |
@@ -72,8 +72,8 @@ Merge `redesign/yardex-2-0` into `main`. Rollback = revert that merge.
 
 ## Maintenance note
 `vercel.json` caches everything under `/assets/` for one year (`immutable`). Never edit
-`enhance-r2.css` / `enhance-r2.js` in place after launch — save changes under a new name
-(e.g. `enhance-r3.css`) and update the references, or returning visitors will
+`enhance-r3.css` / `enhance-r3.js` in place after launch — save changes under a new name
+(e.g. `enhance-r4.css`) and update the references, or returning visitors will
 keep the old version.
 
 ## Round 2 changes (owner feedback)
@@ -106,3 +106,24 @@ keep the old version.
 ### Performance (homepage, emulated phone, throttled, local uncompressed server)
 - Production: LCP ≈ 0.95 s, CLS 0.078, initial transfer ≈ 2.5 MB
 - Preview:    LCP ≈ 1.0–1.1 s, CLS 0.078, initial transfer ≈ 2.35 MB (lower — new media is deferred)
+
+## Round 3 changes (owner feedback)
+- **Services:** back to the original card layout, with stronger photos — Lawn Mowing (striped
+  boulevard), Aeration (striped backyard with curved bed), Mulching (mulched pine ring),
+  Trimming & Edging (fresh rock-border edge), Vacation Yard Care (diagonal stripes). Alt text
+  updated to describe the new photos.
+- **Texture removed:** no stripes or grain. Sections are back to solid brand greens; the services
+  section and the counters band carry a faint (8–10 % opacity) lawn photo instead, loaded only
+  when scrolled near.
+- **Videos removed** (homepage and Lawn Mowing page); clip files deleted.
+- **How it works → timeline** (homepage and /process/): a gold line draws as you scroll and each
+  step lights up when the line reaches it; vertical on phones. Replaces the swipe carousel
+  (its "Swipe or use the arrows…" hint is gone). All step text, images and links unchanged.
+- **Before & after redone:** clean crops without the baked-in labels or logo; each card starts on
+  the before photo and sweeps to the after when it scrolls into view, with Before / After buttons
+  to flip between them. Without JavaScript the after photo shows.
+- Enhancement files are now `enhance-r3.css` / `enhance-r3.js` (cache-safe rename).
+
+Verified: no JS errors; reduced motion shows everything (timeline fully lit, after photos shown);
+SEO head, structured data, URLs and links unchanged on all 32 pages; homepage LCP ≈ 1.04 s vs
+production ≈ 0.98 s (same CLS, slightly smaller first load).

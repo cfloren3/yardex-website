@@ -20,9 +20,9 @@
 
   /* 0. Load the enhancement stylesheet now (kept off the critical path so the
         original page paints first; a <noscript> fallback exists in the HTML). */
-  if (!document.querySelector('link[href="/assets/v2/enhance-r2.css"]')) {
+  if (!document.querySelector('link[href="/assets/v2/enhance-r3.css"]')) {
     var css = document.createElement("link");
-    css.rel = "stylesheet"; css.href = "/assets/v2/enhance-r2.css";
+    css.rel = "stylesheet"; css.href = "/assets/v2/enhance-r3.css";
     document.head.appendChild(css);
   }
 
@@ -106,7 +106,7 @@
   onEnter($$("[data-countup]"), countUp, { threshold: 0.6 });
 
   /* 7. Subtle parallax for existing photo-backed sections (desktop only) */
-  var px = $$(".identity, .section--photo-light, .hero--sub, .photo-band");
+  var px = $$(".identity, .section--photo-light, .hero--sub, .photo-band, .has-photo-bg");
   if (px.length && !reduce && wide) {
     var pTick = false;
     var update = function () {
@@ -125,7 +125,7 @@
 
   /* 8. Gentle 3D tilt on cards (mouse/trackpad only) */
   if (finePointer && !reduce) {
-    $$(".award-card, .mark").forEach(function (card) {
+    $$(".svc, .award-card, .mark").forEach(function (card) {
       card.classList.add("tilt");
       card.addEventListener("pointermove", function (e) {
         var r = card.getBoundingClientRect();
@@ -193,18 +193,6 @@
     lazyMedia.forEach(function (el) { mio.observe(el); });
   } else { lazyMedia.forEach(loadMedia); }
 
-  /* 12. Short lawn clips: play only while on screen; never autoplay for reduced motion */
-  $$("video[data-autoplay]").forEach(function (v) {
-    v.muted = true;
-    if (reduce || !hasIO) { v.setAttribute("controls", ""); return; }
-    new IntersectionObserver(function (en) {
-      en.forEach(function (e) {
-        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-        else v.pause();
-      });
-    }, { threshold: 0.35 }).observe(v);
-  });
-
   /* 13. Contact button: always one tap from the quote form; steps aside when the form is visible */
   var fab = document.querySelector(".fab-contact");
   var qform = document.getElementById("quote-form");
@@ -223,4 +211,45 @@
     window.addEventListener("resize", syncFab);
     syncFab();
   }
+  /* 14. "How it works" timeline: the line draws and steps light up as you scroll */
+  $$(".tl").forEach(function (tl) {
+    var steps = $$(".tl-step", tl);
+    var set = function (p) {
+      tl.style.setProperty("--p", p.toFixed(3));
+      steps.forEach(function (st, i) { st.classList.toggle("on", p >= (i / steps.length) + 0.04); });
+    };
+    if (reduce) { set(1); return; }
+    var busy = false;
+    var update = function () {
+      var r = tl.getBoundingClientRect(), vh = window.innerHeight;
+      var p = (vh * 0.85 - r.top) / (r.height * 0.85 + vh * 0.2);
+      set(Math.max(0, Math.min(1, p)));
+      busy = false;
+    };
+    window.addEventListener("scroll", function () { if (!busy) { busy = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+
+  /* 15. Before & after: sweep from before to after once in view; buttons flip between them */
+  $$(".ba-card").forEach(function (card) {
+    var frame = card.querySelector(".ba-frame"), btns = $$(".ba-toggle button", card);
+    card.classList.add("ba-js");
+    var show = function (after) {
+      card.style.setProperty("--w", frame.offsetWidth + "px");
+      card.classList.toggle("show-after", after);
+      btns.forEach(function (b) { b.setAttribute("aria-pressed", String((b.getAttribute("data-show") === "after") === after)); });
+      var tag = card.querySelector(".ba-tag"); if (tag) tag.textContent = after ? "After" : "Before";
+    };
+    btns.forEach(function (b) { b.addEventListener("click", function () { card.classList.add("sweeping"); show(b.getAttribute("data-show") === "after"); }); });
+    frame.addEventListener("click", function () { card.classList.add("sweeping"); show(!card.classList.contains("show-after")); });
+    if (reduce || !hasIO) { show(true); return; }
+    show(false);
+    var io2 = new IntersectionObserver(function (en) {
+      if (!en[0].isIntersecting) return;
+      io2.disconnect();
+      setTimeout(function () { card.classList.add("sweeping"); show(true); }, 700);
+    }, { threshold: 0.55 });
+    io2.observe(card);
+  });
 })();
