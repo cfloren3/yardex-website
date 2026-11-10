@@ -11,7 +11,6 @@ enhancement layer adds motion, depth and cleaner presentation.
 |---|---|
 | `dist/assets/v2/enhance.css` | **new** — enhancement styles (4.5 KB gzipped) |
 | `dist/assets/v2/enhance.js` | **new** — enhancement behaviour (3.4 KB gzipped, no libraries) |
-| `dist/assets/v2/img/*.webp` | **new** — small WebP variants (kept for future use; not referenced yet) |
 | all 32 `dist/**/*.html` | `<head>`: one `<noscript>` stylesheet link; end of `<body>`: one deferred script tag |
 | `dist/index.html` | targeted section additions (below) — **hero markup byte-identical** |
 | `dist/about/`, `dist/services/`, `dist/reviews/` | additive credential / recognition blocks |
