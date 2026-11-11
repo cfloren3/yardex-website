@@ -1,0 +1,20 @@
+/* Work reel beside the service cards (wide screens only). New file name = cache-safe. */
+.svc-layout{display:block}
+.work-reel{display:none}
+@media (min-width:1100px){
+  .svc-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:22px;align-items:start}
+  .svc-layout .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .work-reel{display:block;position:sticky;top:calc(var(--header-h) + 28px);height:min(calc(100vh - var(--header-h) - 56px),640px);overflow:hidden;border-radius:var(--radius-m);border:1px solid rgba(201,161,78,.25);background:var(--green-900);
+    -webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
+  .work-reel-label{position:absolute;top:12px;left:12px;z-index:2;box-shadow:0 2px 10px rgba(0,0,0,.35);margin:0;padding:.3rem .6rem;border-radius:999px;background:rgba(15,46,29,.82);
+    color:var(--gold-400);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .work-reel-track{position:absolute;top:0;left:0;right:0;list-style:none;margin:0;padding:10px;display:flex;flex-direction:column;gap:10px;animation:work-reel 60s linear infinite}
+  .work-reel:hover .work-reel-track{animation-play-state:paused}
+  .work-reel-track img{display:block;width:100%;height:auto;border-radius:8px}
+  @keyframes work-reel{from{transform:translateY(0)}to{transform:translateY(calc((-100% + 20px) / 3 - 10px / 3))}}
+}
+@media (min-width:1100px) and (prefers-reduced-motion:reduce){
+  .work-reel{overflow-y:auto}
+  .work-reel-track{position:static}
+  .work-reel-track{animation:none}
+}
