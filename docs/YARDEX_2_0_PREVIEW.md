@@ -127,3 +127,13 @@ keep the old version.
 Verified: no JS errors; reduced motion shows everything (timeline fully lit, after photos shown);
 SEO head, structured data, URLs and links unchanged on all 32 pages; homepage LCP ≈ 1.04 s vs
 production ≈ 0.98 s (same CLS, slightly smaller first load).
+
+## Combined with The Lawn Process (branch `redesign/yardex-2-0-lawn-process`)
+This branch is `redesign/yardex-2-0` plus the scroll-controlled **The Lawn Process** section
+from `feature/yardex-difference`, placed directly under the How it works timeline on the
+homepage (before the photo band). Steps: cutting (30-inch Toro TurfMaster), trimming and
+sidewalk/garden bed edging (STIHL FS 111 R), blowing every hard surface (STIHL BR 600), the
+finished lawn. Files: `dist/assets/difference/` (player, styles, frames) and
+`tools/difference/` (source clips, rebuild script, README). Adds one H2 ("The Lawn Process")
+and five H3s; no existing SEO elements changed. Footage is AI-generated and labelled as such.
+To publish both together: merge this branch into `main`.
