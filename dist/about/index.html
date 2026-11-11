@@ -29,7 +29,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,640;9..144,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/img/house-front-lawn.jpg" fetchpriority="high">
 <link rel="stylesheet" href="/assets/style.css">
+<noscript><link rel="stylesheet" href="/assets/v2/enhance-r3.css"></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Yardex Guelph", "url": "https://www.yardexguelph.ca", "foundingDate": "2020", "founder": {"@type": "Person", "name": "Carter Florence"}, "telephone": "+15198350774", "email": "Carter@yardexguelph.ca", "address": {"@type": "PostalAddress", "addressLocality": "Guelph", "addressRegion": "ON", "addressCountry": "CA"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yardexguelph.ca/"}, {"@type": "ListItem", "position": 2, "name": "About"}]}</script>
 </head>
@@ -63,6 +65,20 @@
     
   </div>
 </section>
+<div class="stats has-photo-bg" data-bg="/assets/img2/treeline-stripes-560.webp">
+  <div class="container">
+    <div class="stat reveal"><b data-count="50">0</b><span>Lawns every week</span></div>
+    <div class="stat reveal"><b data-count="75" data-suffix="+">0</b><span>Five-star reviews</span></div>
+    <div class="stat reveal"><b data-count="5">0</b><span>Person crew</span></div>
+    <div class="stat reveal"><b data-count="2020" data-start="2000">2000</b><span>Founded in Guelph</span></div>
+  </div>
+  <div class="container creds" aria-label="Insurance and credentials">
+    <div class="cred reveal"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3.5l10.5 4v7.6c0 6.6-4.4 11.3-10.5 13.4C9.9 26.4 5.5 21.7 5.5 15.1V7.5z"/><polyline points="11 16 14.6 19.6 21.5 12.6"/></svg><div><b>Fully insured</b><span>Commercial general liability insurance</span></div></div>
+    <div class="cred reveal"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 23h24"/><path d="M7 23v-3.2a9 9 0 0 1 18 0V23"/><path d="M13 11.5V8h6v3.5"/></svg><div><b>WSIB coverage</b><span>Workplace Safety &amp; Insurance Board</span></div></div>
+    <div class="cred reveal"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="12.5" r="7.5"/><path d="M11.2 18.4L8.5 28l7.5-3.6 7.5 3.6-2.7-9.6"/></svg><div><b>2024 Quality Business Award</b><span>Best Lawn Care Services in Guelph</span></div></div>
+    <div class="cred reveal"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4.2l3.5 7.3 8 1.1-5.8 5.6 1.4 8L16 22.4l-7.1 3.8 1.4-8-5.8-5.6 8-1.1z"/></svg><div><b>5.0 Google rating</b><span>75+ five-star Google reviews</span></div></div>
+  </div>
+</div>
 
 <section class="section">
   <div class="container prose reveal">
@@ -115,6 +131,9 @@
   </div>
 </section>
 
+<section class="section section--tight">
+  <div class="container photo-trio zoomable"><figure class="reveal"><img src="/assets/img2/striped-slope-fall.jpg" srcset="/assets/img2/striped-slope-fall-560.webp 560w, /assets/img2/striped-slope-fall.jpg 900w" sizes="(max-width: 760px) 90vw, 33vw" alt="Striped lawn on a long sloped yard in fall, maintained by Yardex" width="900" height="1600" loading="lazy" decoding="async"></figure><figure class="reveal"><img src="/assets/img2/pine-curved-stripes.jpg" srcset="/assets/img2/pine-curved-stripes-560.webp 560w, /assets/img2/pine-curved-stripes.jpg 915w" sizes="(max-width: 760px) 90vw, 33vw" alt="Curved mowing stripes around a mulched pine tree" width="915" height="1255" loading="lazy" decoding="async"></figure><figure class="reveal"><img src="/assets/img2/backyard-deck-stripes.jpg" srcset="/assets/img2/backyard-deck-stripes-560.webp 560w, /assets/img2/backyard-deck-stripes.jpg 1170w" sizes="(max-width: 760px) 90vw, 33vw" alt="Backyard lawn with fresh mowing stripes below a deck" width="1170" height="1560" loading="lazy" decoding="async"></figure></div>
+</section>
 <section class="section cta-band on-dark">
   <div class="container reveal">
     <hr class="rule rule--center">
@@ -187,7 +206,8 @@
   <a class="btn btn--gold" href="/quote/">Free Quote</a>
   <a class="btn btn--ghost" href="tel:+15198350774">Call / Text</a>
 </div>
-<a class="fab-contact" href="/quote/" aria-label="Contact Yardex for a free quote">Contact Us</a>
+<a class="fab-contact" href="/quote/#quote-form" aria-label="Contact Yardex for a free quote">Contact Us</a>
 <script src="/assets/main.js" defer></script>
+<script src="/assets/v2/enhance-r3.js" defer fetchpriority="low"></script>
 </body>
 </html>

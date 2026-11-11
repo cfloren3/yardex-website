@@ -1,0 +1,111 @@
+/* Service pages 2.0: at-a-glance chips, moving photo strip, read-more panels, related services.
+   New file name = cache-safe (vercel.json caches /assets for a year). */
+.svc-glance{background:var(--green-950);border-bottom:1px solid rgba(201,161,78,.2);padding:22px 0}
+.svc-glance ul{list-style:none;margin:0 auto;padding:0 var(--pad-x);max-width:var(--max-w);display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.svc-glance li{display:flex;align-items:center;gap:.65rem;color:var(--cream-50);font-weight:600;font-size:.95rem;line-height:1.3;
+  padding:.85rem 1rem;border:1px solid rgba(201,161,78,.28);border-radius:var(--radius-m);background:rgba(255,255,255,.03)}
+.svc-glance svg{flex:none;width:22px;height:22px;color:var(--gold-400)}
+@media (max-width:900px){.svc-glance ul{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.svc-glance li{font-size:.88rem;padding:.7rem .75rem}}
+
+.svc-strip{padding:28px 0 8px;overflow:hidden}
+.svc-strip-track{list-style:none;margin:0;padding:0;display:flex;gap:14px;width:max-content;animation:svc-strip 55s linear infinite}
+.svc-strip:hover .svc-strip-track{animation-play-state:paused}
+.svc-strip li{flex:none}
+.svc-strip img{display:block;height:clamp(200px,26vw,300px);width:auto;border-radius:var(--radius-m);object-fit:cover;
+  box-shadow:0 10px 26px rgba(15,46,29,.25);transition:transform .4s ease}
+.svc-strip img:hover{transform:scale(1.03)}
+@keyframes svc-strip{to{transform:translateX(calc(-50% - 7px))}}
+@media (prefers-reduced-motion:reduce){
+  .svc-strip{overflow-x:auto}
+  .svc-strip-track{animation:none}
+  .svc-strip li[aria-hidden="true"]{display:none}
+}
+
+.svc-more{margin-top:.4rem}
+.svc-more>summary{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;list-style:none;font-weight:600;color:var(--gold-500);
+  padding:.45rem 0;border-bottom:2px solid rgba(201,161,78,.35)}
+.svc-more>summary::-webkit-details-marker{display:none}
+.svc-more>summary::after{content:"+";font-size:1.2em;line-height:1;transition:transform .25s ease}
+.svc-more[open]>summary::after{transform:rotate(45deg)}
+.svc-more[open]>summary{margin-bottom:.6rem}
+.on-dark .svc-more>summary,.section--alt .svc-more>summary{color:var(--gold-400)}
+
+.svc-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:1rem}
+.svc-related-grid a{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:var(--radius-m);overflow:hidden;
+  border:1px solid rgba(201,161,78,.25);background:var(--green-900);transition:transform .2s ease,border-color .2s ease}
+.svc-related-grid a:hover{transform:translateY(-3px);border-color:var(--gold-400)}
+.svc-related-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc-related-grid span{padding:.8rem 1rem;font-weight:600;color:var(--cream-50)}
+@media (max-width:480px){.svc-related-grid{grid-template-columns:1fr 1fr}}
+
+/* ---- Two-column body with sticky quote sidebar ---- */
+.svc-body{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start;max-width:var(--max-w);margin:0 auto;padding:12px var(--pad-x) 40px}
+.svc-main>.section{padding:2.6rem 0;background:none!important;border-bottom:1px solid rgba(201,161,78,.16)}
+.svc-main>.section:last-child{border-bottom:0}
+.svc-main>.section::before{display:none!important}
+.svc-main .container{max-width:none!important;padding-left:0!important;padding-right:0!important}
+.svc-main .grid-2{gap:32px}
+.svc-main .grid-3{grid-template-columns:1fr 1fr 1fr;gap:14px}
+.svc-aside{position:sticky;top:calc(var(--header-h) + 34px)}
+.svc-aside-card{border-radius:var(--radius-m);background:var(--green-900);border:1px solid rgba(201,161,78,.3);padding:1.5rem;color:#E8E2D2;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.svc-aside-title{font-family:var(--font-display);font-weight:640;font-size:1.45rem;color:var(--cream-50);margin:0 0 .35rem}
+.svc-aside-card p{margin:0 0 1rem;font-size:.92rem;line-height:1.5}
+.svc-aside-card .btn{display:block;text-align:center;width:100%;margin-bottom:.6rem}
+.svc-aside-proof{font-size:.84rem!important;color:var(--gold-400)}
+.svc-aside-h{margin:1.3rem 0 .5rem!important;padding-top:1.1rem;border-top:1px solid rgba(201,161,78,.22);font-size:.72rem!important;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-400)}
+.svc-aside ul{list-style:none;margin:0;padding:0}
+.svc-aside li a{display:flex;justify-content:space-between;padding:.42rem 0;color:#E8E2D2;text-decoration:none;font-size:.95rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.svc-aside li a::after{content:"→";color:var(--gold-400);transition:transform .2s ease}
+.svc-aside li a:hover{color:var(--cream-50)}
+.svc-aside li a:hover::after{transform:translateX(3px)}
+@media (max-width:1000px){
+  .svc-body{grid-template-columns:1fr;gap:0}
+  .svc-aside{position:static;margin-top:1rem}
+  .svc-main .grid-3{grid-template-columns:1fr}
+}
+.svc-main>figure{margin:1.6rem 0}
+
+/* ---- Light reading area (service pages), after A Cut Above's layout ---- */
+.svc-light{background:var(--cream-50);color:var(--ink-900)}
+.svc-light .svc-strip{padding:34px 0 0}
+.svc-light .svc-body{padding-top:28px;padding-bottom:64px}
+.svc-light .svc-main,.svc-light .svc-main p,.svc-light .svc-main li{color:var(--ink-600)}
+.svc-light .svc-main h2,.svc-light .svc-main h3,.svc-light .svc-main b,.svc-light .svc-main strong{color:var(--green-950)}
+.svc-light .svc-main h2{font-size:clamp(1.55rem,2.4vw,2rem)}
+.svc-light .svc-main .eyebrow{color:#8F6C25}
+.svc-light .svc-main .rule{background:var(--gold-500)}
+.svc-light .svc-main a{color:var(--green-700)}
+.svc-light .svc-main a:hover{color:var(--green-950)}
+.svc-light .svc-main>.section{border-bottom-color:var(--line-200)}
+/* green-tick checklist */
+.svc-light .svc-main .checklist li{padding-left:2rem;color:var(--ink-900)}
+.svc-light .svc-main .checklist li::before{content:"";position:absolute;left:0;top:.62rem;width:18px;height:18px;border-radius:50%;
+  background:var(--green-700) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.svc-light .svc-main .checklist li:hover{padding-left:2rem}
+/* the line after a checklist becomes a tip box */
+.svc-light .svc-main .checklist + p{background:#EAF2E4;border:1px solid #D3E3C8;border-radius:var(--radius-m);padding:1rem 1.2rem;color:var(--ink-900)}
+.svc-light .svc-main .checklist + p::before{content:"Good to know: ";font-weight:700;color:var(--green-700)}
+/* cards, FAQ, read-more on light */
+.svc-light .svc-main .card{background:#fff;border:1px solid var(--line-200);color:var(--ink-600)}
+.svc-light .svc-main .faq details{border-color:var(--line-200)}
+.svc-light .svc-main .faq summary{color:var(--green-950)}
+.svc-light .svc-main .svc-more>summary{color:var(--green-700);border-bottom-color:rgba(46,107,79,.35)}
+.svc-light .svc-main figcaption{color:var(--ink-600)}
+.svc-light .svc-strip img{box-shadow:0 10px 24px rgba(15,46,29,.18)}
+
+/* ---- r3: intro blurb, more breathing room, readability ---- */
+.svc-light .svc-body{grid-template-columns:minmax(0,1fr) 300px;gap:80px;padding-top:56px;padding-bottom:88px;max-width:1180px}
+.svc-light .svc-main{max-width:720px}
+.svc-light .svc-main>.section{padding:3.2rem 0}
+.svc-light .svc-main>.section:first-child{padding-top:0}
+.svc-light .svc-main p,.svc-light .svc-main li{font-size:1.0625rem;line-height:1.75;color:#3B4A43}
+.svc-light .svc-main h2{margin-bottom:.4rem}
+.svc-light .svc-main .grid-2{gap:40px}
+.svc-intro p{max-width:66ch;margin:0 0 1.1rem}
+.svc-light .svc-main .svc-intro-lead{font-size:1.22rem;line-height:1.7;color:var(--ink-900)}
+.svc-aside-card{padding:1.7rem}
+@media (max-width:1000px){.svc-light .svc-body{gap:0;padding-top:36px}.svc-light .svc-main{max-width:none}}
+/* readable on cream: override dark-theme prose lead colour */
+.svc-light .svc-main .prose p,.svc-light .svc-main .prose>p:first-of-type{color:#3B4A43}
+.svc-light .svc-main .prose>p:first-of-type{color:var(--ink-900)}
