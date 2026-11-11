@@ -52,3 +52,9 @@ headings. The section adds one H2 ("The Yardex Difference").
 - Desktop frames total ~24 MB and mobile ~9 MB, only for visitors who scroll there.
 - Measured CLS on the homepage is unchanged (0.033 before and after on desktop).
 - Reduced motion or Save-Data shows a static 5-step version with no frame downloads.
+
+## Branch preview page
+
+`dist/preview/the-yardex-difference/` is a noindexed copy of the homepage with the
+section inserted, so the branch's Vercel preview URL can be opened on any device.
+**Delete it before merging to `main`.**
