@@ -11,7 +11,7 @@ in `dist/index.html` plus one stylesheet and one script.
 | Path | What it is |
 | --- | --- |
 | `tools/difference/section.html` | Source copy of the section markup in `dist/index.html` |
-| `dist/assets/difference/difference.css` / `.js` | Styles and the scroll player (no dependencies, scoped to `.ydx`) |
+| `dist/assets/difference/difference.css` / `difference-r2.js` | Styles and the scroll player (no dependencies, scoped to `.ydx`) |
 | `dist/assets/difference/d/`, `m/` | Desktop (1280×720, 10 fps) and mobile (540×960 portrait crop, 8 fps) WebP frames |
 | `dist/assets/difference/poster-1..5.webp` | Stills for the static (reduced-motion / Save-Data / no-JS) version |
 | `tools/difference/source/` | The five source clips (AI-generated with Kling 3.0 from Nano Banana Pro start frames) |

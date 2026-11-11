@@ -123,8 +123,12 @@
     });
   }
 
-  // start loading ~1.5 screens before the section arrives
-  new IntersectionObserver(function (en) { if (en[0].isIntersecting) { load(); size(); tick(); } }, { rootMargin: "150% 0px" }).observe(root);
+  // start loading half a screen before the section arrives, and never before the page
+  // itself has finished loading (keeps the page's own images and LCP fast)
+  function whenLoaded(fn) { if (document.readyState === "complete") fn(); else window.addEventListener("load", fn, { once: true }); }
+  whenLoaded(function () {
+    new IntersectionObserver(function (en) { if (en[0].isIntersecting) { load(); size(); tick(); } }, { rootMargin: "50% 0px" }).observe(root);
+  });
   new IntersectionObserver(function (en) { inView = en[0].isIntersecting; if (inView) tick(); }).observe(root);
   window.addEventListener("scroll", function () { if (inView) tick(); }, { passive: true });
   window.addEventListener("resize", function () { size(); tick(); });
