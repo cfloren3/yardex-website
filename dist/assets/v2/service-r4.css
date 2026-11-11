@@ -109,3 +109,22 @@
 /* readable on cream: override dark-theme prose lead colour */
 .svc-light .svc-main .prose p,.svc-light .svc-main .prose>p:first-of-type{color:#3B4A43}
 .svc-light .svc-main .prose>p:first-of-type{color:var(--ink-900)}
+
+/* ---- r4: phone/tablet layout fix (single column, card below the article) ---- */
+@media (max-width:1000px){
+  .svc-body,.svc-light .svc-body{display:block;grid-template-columns:none;gap:0;padding:32px var(--pad-x) 56px;max-width:none}
+  .svc-light .svc-main{max-width:none}
+  .svc-aside{position:static;margin-top:8px}
+  .svc-main .grid-2,.svc-light .svc-main .grid-2{grid-template-columns:1fr;gap:22px}
+  .svc-main .grid-3{grid-template-columns:1fr}
+  .svc-light .svc-main>.section{padding:2.2rem 0}
+  .svc-light .svc-main .checklist + p{margin-top:.4rem}
+}
+@media (max-width:560px){
+  .svc-light .svc-main .svc-intro-lead{font-size:1.1rem}
+  .svc-light .svc-main p,.svc-light .svc-main li{font-size:1rem;line-height:1.7}
+  .svc-light .svc-main h2{font-size:1.5rem;line-height:1.2}
+  .svc-related-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .svc-related-grid span{padding:.6rem .7rem;font-size:.92rem}
+  .svc-aside-card{padding:1.3rem}
+}

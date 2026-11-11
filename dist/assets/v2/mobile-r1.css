@@ -1,0 +1,6 @@
+/* Site-wide phone fixes. Cache-safe name. */
+@media (max-width:760px){
+  /* the sticky Free Quote / Call bar already covers this; the floating pill covered content */
+  html body a.fab-contact{display:none!important}
+  .recog-line .cred:last-child:nth-child(odd){grid-column:1 / -1}
+}
