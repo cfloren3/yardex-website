@@ -93,3 +93,19 @@
 .svc-light .svc-main .svc-more>summary{color:var(--green-700);border-bottom-color:rgba(46,107,79,.35)}
 .svc-light .svc-main figcaption{color:var(--ink-600)}
 .svc-light .svc-strip img{box-shadow:0 10px 24px rgba(15,46,29,.18)}
+
+/* ---- r3: intro blurb, more breathing room, readability ---- */
+.svc-light .svc-body{grid-template-columns:minmax(0,1fr) 300px;gap:80px;padding-top:56px;padding-bottom:88px;max-width:1180px}
+.svc-light .svc-main{max-width:720px}
+.svc-light .svc-main>.section{padding:3.2rem 0}
+.svc-light .svc-main>.section:first-child{padding-top:0}
+.svc-light .svc-main p,.svc-light .svc-main li{font-size:1.0625rem;line-height:1.75;color:#3B4A43}
+.svc-light .svc-main h2{margin-bottom:.4rem}
+.svc-light .svc-main .grid-2{gap:40px}
+.svc-intro p{max-width:66ch;margin:0 0 1.1rem}
+.svc-light .svc-main .svc-intro-lead{font-size:1.22rem;line-height:1.7;color:var(--ink-900)}
+.svc-aside-card{padding:1.7rem}
+@media (max-width:1000px){.svc-light .svc-body{gap:0;padding-top:36px}.svc-light .svc-main{max-width:none}}
+/* readable on cream: override dark-theme prose lead colour */
+.svc-light .svc-main .prose p,.svc-light .svc-main .prose>p:first-of-type{color:#3B4A43}
+.svc-light .svc-main .prose>p:first-of-type{color:var(--ink-900)}
