@@ -1,0 +1,13 @@
+scan_id,keyword,market,grid,radius_km,center,scan_date,arp,atrp,solv_pct,pct_rank1,pct_top3,pct_top10,pct_unranked,strongest_area,weakest_area,top_competitor_1,top_competitor_2,top_competitor_3,credits_est,status
+B01,lawn care Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B02,lawn care Guelph,Guelph,9x9,10,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B03,lawn mowing Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B04,grass cutting Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B05,fall cleanup Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B06,spring cleanup Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B07,leaf removal Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B08,lawn aeration Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B09,dethatching Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B10,sodding Guelph,Guelph,9x9,6,Yardex GBP pin,,,,,,,,,,,,,,81,PLANNED - not run (no Local Falcon access in this session)
+B11,lawn care Puslinch,Puslinch,7x7,8,Aberfoyle (Brock Rd & Hwy 6 area),,,,,,,,,,,,,,49,PLANNED - not run (no Local Falcon access in this session)
+B12,lawn mowing Puslinch,Puslinch,7x7,8,Aberfoyle (Brock Rd & Hwy 6 area),,,,,,,,,,,,,,49,PLANNED - not run (no Local Falcon access in this session)
