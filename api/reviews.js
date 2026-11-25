@@ -5,7 +5,10 @@ export default async function handler(req, res) {
   const key = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.YARDEX_PLACE_ID;
   if (!key || !placeId) {
-    res.status(500).json({ error: "not configured" });
+    // Not configured: answer 200 with no data so browsers don't log a console
+    // error on every page view (the page keeps its static review count).
+    res.setHeader("Cache-Control", "s-maxage=3600");
+    res.status(200).json({ count: null, rating: null });
     return;
   }
   try {
@@ -18,6 +21,7 @@ export default async function handler(req, res) {
     res.setHeader("Cache-Control", "s-maxage=21600, stale-while-revalidate=86400");
     res.status(200).json({ count: data.userRatingCount, rating: data.rating });
   } catch (e) {
-    res.status(502).json({ error: "unavailable" });
+    res.setHeader("Cache-Control", "s-maxage=600");
+    res.status(200).json({ count: null, rating: null });
   }
 }

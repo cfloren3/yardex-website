@@ -56,6 +56,22 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.yardexguelph.com"
+        }
+      ],
+      "destination": "https://www.yardexguelph.ca/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/contact-us{/}?",
       "destination": "/quote/",
       "permanent": true
