@@ -1,0 +1,68 @@
+Keyword,Search intent,Primary target URL,Page status,Supporting URLs,Cannibalization note,Priority
+lawn care guelph,Commercial,/,Existing,/services/; /lawn-mowing-guelph/,,Protect
+lawn mowing guelph,Commercial,/lawn-mowing-guelph/,Existing,/lawn-mowing-prices-guelph/; /,,Protect
+grass cutting guelph,Commercial,/lawn-mowing-guelph/,Existing,/lawn-mowing-prices-guelph/; /,,High
+lawn maintenance guelph,Commercial,/,Existing,/services/; /lawn-mowing-guelph/,,High
+lawn service guelph,Commercial,/,Existing,/services/; /lawn-mowing-guelph/,,High
+weekly lawn mowing guelph,Commercial,/lawn-mowing-guelph/,Existing,/lawn-mowing-prices-guelph/; /,,High
+residential lawn care guelph,Commercial,/,Existing,/services/; /lawn-mowing-guelph/,,High
+affordable lawn care guelph,Commercial,/lawn-mowing-prices-guelph/,Existing,,,Medium
+lawn care near me,Commercial (local),/ + GBP,Existing,/services/; /lawn-mowing-guelph/,,High
+lawn mowing near me,Commercial (local),/lawn-mowing-guelph/ + GBP,Existing,/lawn-mowing-prices-guelph/; /,,High
+spring cleanup guelph,Commercial (seasonal),/services/spring-cleanup/,Existing,/yard-cleanup-guelph/; /dethatching-guelph/; /blog/spring-lawn-care-checklist-guelph/,,Critical
+spring yard cleanup guelph,Commercial (seasonal),/services/spring-cleanup/,Existing,/yard-cleanup-guelph/; /dethatching-guelph/; /blog/spring-lawn-care-checklist-guelph/,,Critical
+spring property cleanup guelph,Commercial (seasonal),/services/spring-cleanup/,Existing,/yard-cleanup-guelph/; /dethatching-guelph/; /blog/spring-lawn-care-checklist-guelph/,,High
+spring lawn care guelph,Informational/commercial,/blog/spring-lawn-care-checklist-guelph/,Existing,,,Medium
+fall cleanup guelph,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,Critical
+fall yard cleanup guelph,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,Critical
+fall property cleanup guelph,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,High
+leaf removal guelph,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,High
+leaf cleanup guelph,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,High
+yard cleanup guelph,Commercial,/yard-cleanup-guelph/,Existing,/services/spring-cleanup/; /services/fall-cleanup/,Generic/combined intent only; seasonal queries belong to /services/spring-cleanup/ and /services/fall-cleanup/ (hub + page now link there),High
+property cleanup guelph,Commercial,/yard-cleanup-guelph/,Existing,/services/spring-cleanup/; /services/fall-cleanup/,Generic/combined intent only; seasonal queries belong to /services/spring-cleanup/ and /services/fall-cleanup/ (hub + page now link there),Critical
+garden cleanup guelph,Commercial,/garden-maintenance-guelph/,New (2026-11-25),/weed-control-guelph/; /mulching-guelph/,Weed control keeps lawn/pesticide-free weed intent; garden page keeps bed upkeep,High
+backyard cleanup guelph,Commercial,/yard-cleanup-guelph/,Existing,/services/spring-cleanup/; /services/fall-cleanup/,Generic/combined intent only; seasonal queries belong to /services/spring-cleanup/ and /services/fall-cleanup/ (hub + page now link there),Medium
+dethatching guelph,Commercial,/dethatching-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /services/spring-cleanup/,Cross-linked with aeration; different problem (thatch vs compaction),Critical
+lawn dethatching guelph,Commercial,/dethatching-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /services/spring-cleanup/,Cross-linked with aeration; different problem (thatch vs compaction),Critical
+power raking guelph,Commercial,/dethatching-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /services/spring-cleanup/,Cross-linked with aeration; different problem (thatch vs compaction),High
+lawn aeration guelph,Commercial,/aeration-overseeding-guelph/,Existing,,,High
+core aeration guelph,Commercial,/aeration-overseeding-guelph/,Existing,,,High
+overseeding guelph,Commercial,/aeration-overseeding-guelph/,Existing,,,High
+lawn overseeding guelph,Commercial,/aeration-overseeding-guelph/,Existing,,,High
+lawn fertilization guelph,Commercial,/lawn-fertilizer-guelph/,Existing,,,High
+lawn fertilizer service guelph,Commercial,/lawn-fertilizer-guelph/,Existing,,,High
+lawn restoration guelph,Commercial,/aeration-overseeding-guelph/,Existing,,,Medium
+lawn renovation guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Medium
+sodding guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Critical
+sod installation guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Critical
+sod replacement guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,High
+lawn replacement guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,High
+new lawn installation guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Medium
+residential sod installation guelph,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Medium
+property maintenance guelph,Commercial,/services/,Existing,,,High
+yard maintenance guelph,Commercial,/services/,Existing,,,High
+residential landscaping guelph,Commercial,/services/,Existing,,,Medium
+garden maintenance guelph,Commercial,/garden-maintenance-guelph/,New (2026-11-25),/weed-control-guelph/; /mulching-guelph/,Weed control keeps lawn/pesticide-free weed intent; garden page keeps bed upkeep,High
+mulching guelph,Commercial,/mulching-guelph/,Existing,,,High
+mulch installation guelph,Commercial,/mulching-guelph/,Existing,,,High
+garden weeding guelph,Commercial,/garden-maintenance-guelph/,New (2026-11-25),/weed-control-guelph/; /mulching-guelph/,Weed control keeps lawn/pesticide-free weed intent; garden page keeps bed upkeep,High
+weed removal guelph,Commercial,/weed-control-guelph/,Existing,,,Medium
+weed control guelph,Commercial,/weed-control-guelph/,Existing,,,Medium
+groundcover removal guelph,Commercial,/garden-maintenance-guelph/,New (2026-11-25),/weed-control-guelph/; /mulching-guelph/,Weed control keeps lawn/pesticide-free weed intent; garden page keeps bed upkeep,Medium
+hedge trimming guelph,Commercial,/hedge-trimming-guelph/,New (2026-11-25),/trimming-edging-guelph/,"trimming-edging title no longer says ""Hedges""; it links to this page",High
+bush trimming guelph,Commercial,/hedge-trimming-guelph/,New (2026-11-25),/trimming-edging-guelph/,"trimming-edging title no longer says ""Hedges""; it links to this page",High
+shrub pruning guelph,Commercial,/hedge-trimming-guelph/,New (2026-11-25),/trimming-edging-guelph/,"trimming-edging title no longer says ""Hedges""; it links to this page",High
+lawn edging guelph,Commercial,/trimming-edging-guelph/,Existing,,,Medium
+branch removal guelph,Commercial,/garden-maintenance-guelph/,New (2026-11-25),/weed-control-guelph/; /mulching-guelph/,Weed control keeps lawn/pesticide-free weed intent; garden page keeps bed upkeep,Medium
+vacation lawn care guelph,Commercial,/vacation-yard-care-guelph/,Existing,,,Medium
+lawn mowing prices guelph,Commercial research,/lawn-mowing-prices-guelph/,Existing,,,High
+lawn care puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,High
+lawn mowing puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,High
+grass cutting puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,Medium
+property maintenance puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,Medium
+landscaping puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,Low
+spring cleanup puslinch,Commercial (seasonal),/services/spring-cleanup/,Existing,/yard-cleanup-guelph/; /dethatching-guelph/; /blog/spring-lawn-care-checklist-guelph/,,High
+fall cleanup puslinch,Commercial (seasonal),/services/fall-cleanup/,Existing,/yard-cleanup-guelph/; /blog/fall-lawn-care-checklist-guelph/,,High
+sodding puslinch,Commercial,/sodding-guelph/,New (2026-11-25),/aeration-overseeding-guelph/; /blog/fix-patchy-lawn-guelph/,,Low
+lawn aeration puslinch,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,Medium
+lawn care aberfoyle,Commercial,/lawn-care-puslinch/,New (2026-11-25),/services/spring-cleanup/; /services/fall-cleanup/,,Medium

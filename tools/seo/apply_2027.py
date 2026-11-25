@@ -301,3 +301,13 @@ for path, links in BLOG_LINKS.items():
     wr(path, s)
 
 print('sitewide + existing-page edits done')
+
+# a11y follow-up (link-in-text-block): underline the remaining in-text GuelphToday links
+import glob as _g
+_U = 'https://www.guelphtoday.com/local-news/fourteen-year-old-launches-local-landscaping-company-6451456'
+_ST = ' style="text-decoration:underline;text-underline-offset:2px"'
+for _f in _g.glob(ROOT + '/**/*.html', recursive=True):
+    _s = open(_f, encoding='utf-8').read(); _o = _s
+    _s = _s.replace(f'<span>As featured in <a href="{_U}" rel="noopener">GuelphToday', f'<span>As featured in <a href="{_U}" rel="noopener"{_ST}>GuelphToday')
+    _s = _s.replace(f'one lawn at a time. <a href="{_U}" rel="noopener">Read the article', f'one lawn at a time. <a href="{_U}" rel="noopener"{_ST}>Read the article')
+    if _s != _o: open(_f, 'w', encoding='utf-8').write(_s)
